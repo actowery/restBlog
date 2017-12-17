@@ -1,0 +1,25 @@
+{
+  "name": "restful",
+  "version": "1.0.0",
+  "description": "restful Blog App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actowery/restBlog.git"
+  },
+  "author": "cihan_Towery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/actowery/restBlog/issues"
+  },
+  "homepage": "https://github.com/actowery/restBlog#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
+  }
+}
