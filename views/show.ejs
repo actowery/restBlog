@@ -11,9 +11,13 @@
             <div class="description">
                 <p><%- blog.body %></p>
             </div>
+            <!--delete workaround-->
+            <a class="ui yellow basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+            <form id="delete" method="POST" action="/blogs/<%=blog._id%>?_method=DELETE">
+                <button class="ui red basic button">Delete</button>
+            </form>
         </div>
     </div>
-
-
 </div>
+
 <% include ./partials/footer %>

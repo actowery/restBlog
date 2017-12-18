@@ -79,6 +79,16 @@ app.put("/blogs/:id", function(req,res){
     });
 });
 //DESTROY
+app.delete("/blogs/:id", function(req,res){
+    Blog.findByIdAndRemove(req.params.id, function(err){
+        //error check placeholder
+        if(err){
+            res.redirect("/blogs");
+        }else{
+            res.redirect("/blogs");
+        }
+    });
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Blog Server Running");
