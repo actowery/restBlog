@@ -47,6 +47,15 @@ app.post("/blogs", function(req,res){
     });
 });
 //SHOW
+app.get("/blogs/:id", function(req,res){
+    Blog.findById(req.params.id,function(err,blog){
+        if(err){
+            res.redirect("/blogs");
+        }else{
+            res.render("show", {blog:blog})
+        }
+    });
+});
 //EDIT
 //UPDATE
 //DESTROY
