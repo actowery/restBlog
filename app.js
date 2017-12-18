@@ -21,7 +21,7 @@ var Blog = mongoose.model("Blog", blogSchema);
 app.get("/", function(req, res) {
    res.redirect("/blogs"); 
 });
-
+//INDEX
 app.get("/blogs", function(req,res){
     Blog.find({},function(err,blogs){
         if(err){
@@ -31,6 +31,25 @@ app.get("/blogs", function(req,res){
         }
     });
 });
+//NEW
+app.get("/blogs/new", function(req, res) {
+    res.render("new");
+});
+//CREATE
+app.post("/blogs", function(req,res){
+    Blog.create(req.body.blog,function(err,blogs){
+        if(err){
+            console.log(err);
+            res.render("new");
+        }else{
+            res.redirect("/blogs")
+        }
+    });
+});
+//SHOW
+//EDIT
+//UPDATE
+//DESTROY
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Blog Server Running");
